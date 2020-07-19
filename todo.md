@@ -24,9 +24,35 @@ nano ~/.config/fish/config.fish
 
 # 設定同期
 - Alfred
-- iterm
+- iterm  
 - BetterTouchTool
 
 # anyenv設定
+```shell script
+# https://github.com/anyenv/anyenv
+anyenv init
+anyenv install --init
+
+# fish_configに以下を追記
+# set -x PATH $HOME/.anyenv/bin $PATH
+# eval (anyenv init - | source)
+
+
+# nodenv
+anyenv install nodenv
+touch $(nodenv root)/default-packages
+nodenv install 14.5.0
+nodenv global 14.5.0
+nodenv versions
+
+# pyenv
+anyenv install pyenv
+pyenv install 3.8.0
+pyenv global 3.8.0
+pyenv versions
+
+```
 
 # mackup
+
+# TimeMachine設定
